@@ -13,6 +13,8 @@ javac BBSecurity.java BBSecurityTest.java && junit BBSecurityTest
 
 **Observatie:** inainte sa rulezi `analyze`, vezi daca coverage_log file exista si se numeste asa - tool-ul asta mai da _crash_, plus ca de fapt numele log-ului este cu data ora etc.
 
+Link util: http://codecover.org/documentation/tutorials/how_to_batch.html
+
 ```
 codecover instrument --root-directory ./src --destination ./instrumentedSrc --container ./test-session-container.xml --language java --charset UTF-8
 
