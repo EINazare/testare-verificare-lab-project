@@ -26,10 +26,11 @@ junit BBSecurityCauseEffectTest
 
 codecover analyze --container ./test-session-container.xml --coverage-log ./instrumentedSrc/coverage_log.clf --name TestSession1 --comment "The first test session"
 
-
-codecover report --container ./test-session-container.xml --destination ./report/BBSecurity.html --session "TestSession1" --template $HOME/java/codecover-batch-1.0/report-templates/HTML_Report_hierarchic.xml
-
 codecover merge-sessions --container ./test-session-container.xml --session TestSession1 --session TestSession2 --session TestSession3 --name "TestSession1+2+3" --comment "TestSession1 , TestSession2 and TestSession3"
+
+codecover report --container ./test-session-container.xml --destination ./report/BBSecurity.html --session "TestSession1+2+3" --template $HOME/java/codecover-batch-1.0/report-templates/HTML_Report_hierarchic.xml
+
+
 ```
 
 
