@@ -2,8 +2,28 @@
 Proiectul de Laborator de la Testare &amp; Verificare
 
 ## Comenzi:
+
+### Pentru punctul 1:
+
 ```
 javac BBSecurity.java BBSecurityTest.java && junit BBSecurityTest
+```
+
+### Pntru punctul 2:
+
+**Observatie:** inainte sa rulezi `analyze`, vezi daca coverage_log file exista si se numeste asa - tool-ul asta mai da _crash_, plus ca de fapt numele log-ului este cu data ora etc.
+
+```
+codecover instrument --root-directory ./src --destination ./instrumentedSrc --container ./test-session-container.xml --language java --charset UTF-8
+
+cd instrumentedSrc && find . -name "*.java" -print | xargs javac
+
+cd ../
+
+codecover analyze --container ./test-session-container.xml --coverage-log ./instrumentedSrc/coverage_log.clf --name TestSession1 --comment "The first test session"
+
+
+codecover report --container ./test-session-container.xml --destination ./report/BBSecurity.html --session "TestSession1" --template $HOME/java/codecover-batch-1.0/report-templates/HTML_Report_hierarchic.xml
 ```
 
 
