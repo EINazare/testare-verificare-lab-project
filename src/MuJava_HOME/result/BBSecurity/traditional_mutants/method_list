@@ -1,0 +1,6 @@
+BBSecurity(java.lang.String)
+double_asinh(double)
+double_inputResult(double,double,double)
+void_generateResults()
+java.lang.String_getResultOutput()
+void_main(java.lang.String)
