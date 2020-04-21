@@ -35,6 +35,12 @@ codecover report --container ./test-session-container.xml --destination ./report
 
 ```
 
+### Punctul 4
+
+```
+java mujava.gui.GenMutantsMain
+```
+
 
 ## Problema: https://www.pbinfo.ro/probleme/2751/bbsecurity
 
