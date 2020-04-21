@@ -16,22 +16,51 @@ javac BBSecurity.java BBSecurityTest.java && junit BBSecurityTest
 Link util: http://codecover.org/documentation/tutorials/how_to_batch.html
 
 ```
-codecover instrument --root-directory ./src --destination ./instrumentedSrc --container ./test-session-container.xml --language java --charset UTF-8
+codecover instrument --root-directory ./equivalence --destination ./instrumentedSrc --container ./test-session-container.xml --language java --charset UTF-8
 
 cd instrumentedSrc && find . -name "*.java" -print | xargs javac
 
 junit BBSecurityEquivalenceTest
 
+cd ..
+
+codecover analyze --container ./test-session-container.xml --coverage-log ./instrumentedSrc/coverage_log.clf --name EquivalenceTest --comment "This is the session for EquivalenceTest"
+
+codecover report --container ./test-session-container.xml --destination ./report/BBSecurity.html --session "EquivalenceTest" --template $HOME/java/codecover-batch-1.0/report-templates/HTML_Report_hierarchic.xml
+
+=====================================================================================
+
+codecover instrument --root-directory ./boundry --destination ./instrumentedSrc --container ./test-session-container.xml --language java --charset UTF-8
+
+cd instrumentedSrc && find . -name "*.java" -print | xargs javac
+
 junit BBSecurityBoundaryTest
+
+cd ..
+
+codecover analyze --container ./test-session-container.xml --coverage-log ./instrumentedSrc/coverage_log.clf --name BoundryTest --comment "This is the session for BoundryTest"
+
+codecover report --container ./test-session-container.xml --destination ./report/BBSecurity.html --session "BoundryTest" --template $HOME/java/codecover-batch-1.0/report-templates/HTML_Report_hierarchic.xml
+
+=====================================================================================
+
+codecover instrument --root-directory ./causeeffect --destination ./instrumentedSrc --container ./test-session-container.xml --language java --charset UTF-8
+
+cd instrumentedSrc && find . -name "*.java" -print | xargs javac
 
 junit BBSecurityCauseEffectTest
 
-codecover analyze --container ./test-session-container.xml --coverage-log ./instrumentedSrc/coverage_log.clf --name TestSession1 --comment "The first test session"
+cd ..
+
+codecover analyze --container ./test-session-container.xml --coverage-log ./instrumentedSrc/coverage_log.clf --name CauseEffectTest --comment "This is the session for CauseEffectTest"
+
+codecover report --container ./test-session-container.xml --destination ./report/BBSecurity.html --session "CauseEffectTest" --template $HOME/java/codecover-batch-1.0/report-templates/HTML_Report_hierarchic.xml
+
+
+
+=====================================================================================
 
 codecover merge-sessions --container ./test-session-container.xml --session TestSession1 --session TestSession2 --session TestSession3 --name "TestSession1+2+3" --comment "TestSession1 , TestSession2 and TestSession3"
-
-codecover report --container ./test-session-container.xml --destination ./report/BBSecurity.html --session "TestSession1+2+3" --template $HOME/java/codecover-batch-1.0/report-templates/HTML_Report_hierarchic.xml
-
 
 ```
 

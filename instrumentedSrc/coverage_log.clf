@@ -3,12 +3,12 @@
 // 
 // Start Session
 // 
-// 20.04.2020 17:03:28.274
+// 21.04.2020 22:30:08.293
 // 
 // ///////////////////////////////
-// 20.04.2020 17:03:28.274
-TEST_SESSION_CONTAINER "690f9553-dc29-4900-a0e3-d52b2d249aee"
-START_TEST_CASE "UNNAMED TESTCASE" 1587391408274 "This is a test case containing all coverage results cause no startTestCase methods where captured."
+// 21.04.2020 22:30:08.293
+TEST_SESSION_CONTAINER "18eadd55-81be-48f7-8e53-ec6f31db70fe"
+START_TEST_CASE "UNNAMED TESTCASE" 1587497408293 "This is a test case containing all coverage results cause no startTestCase methods where captured."
 START_SECTION "BBSecurity.java"
 S1 6
 S2 6
@@ -153,14 +153,14 @@ S15 1
 S16 1
 S17 1
 S18 1
-// 20.04.2020 17:03:28.410
-// 00:00.136
-END_TEST_CASE "UNNAMED TESTCASE" 1587391408410
+// 21.04.2020 22:30:08.427
+// 00:00.134
+END_TEST_CASE "UNNAMED TESTCASE" 1587497408427
 // ///////////////////////////////
 // 
 // End Session
 // 
-// 20.04.2020 17:03:28.411
-// 00:00.137
+// 21.04.2020 22:30:08.428
+// 00:00.135
 // 
 // ///////////////////////////////
